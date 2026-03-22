@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="item-list">
     <h2>Item List</h2>
     <ItemRow
       v-for="item in items"
@@ -28,4 +28,15 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.item-list {
+  width: 100%;
+  max-width: 500px;
+}
+
+.item-list h2 {
+  margin-bottom: 16px;
+  color: #0369a1;  
+  font-size: 1.4rem;
+}
+</style>
