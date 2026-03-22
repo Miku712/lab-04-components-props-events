@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Task Manager</h1>
-    <ItemForm />
+    <ItemForm @add-item="handleAddItem" />
     <ItemList :items="items" />
   </div>
 </template>
@@ -19,14 +19,17 @@ export default {
   data() {
     return {
       items: [
-        { id: 1, name: "Read about Vue 3" },
-        { id: 2, name: "Create Task Manager" },
+        { id: 1, name: "Learn Vue 3" },
+        { id: 2, name: "Build Task Manager" },
         { id: 3, name: "Commit to Git" },
       ],
+      nextId: 4, 
     };
+  },
+  methods: {
+    handleAddItem(newItem) {
+      this.items.push({ id: this.nextId++, name: newItem.name });
+    },
   },
 };
 </script>
-
-<style>
-</style>
