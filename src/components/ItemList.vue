@@ -5,6 +5,8 @@
       v-for="item in items"
       :key="item.id"
       :item="item"
+      @delete-item="$emit('delete-item', $event)"
+      @toggle-item="$emit('toggle-item', $event)"
     />
   </div>
 </template>
