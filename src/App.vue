@@ -18,7 +18,11 @@ export default {
   },
   data() {
     return {
-      items: [],
+      items: [
+        { id: 1, name: "Read about Vue 3" },
+        { id: 2, name: "Create Task Manager" },
+        { id: 3, name: "Commit to Git" },
+      ],
     };
   },
 };

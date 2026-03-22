@@ -1,10 +1,17 @@
 <template>
   <div>
     <h2>Item List</h2>
+    <ItemRow
+      v-for="item in items"
+      :key="item.id"
+      :item="item"
+    />
   </div>
 </template>
 
 <script>
+import ItemRow from "./ItemRow.vue";
+
 export default {
   name: "ItemList",
   props: {
@@ -12,6 +19,9 @@ export default {
       type: Array,
       default: () => [],
     },
+  },
+  components: {
+    ItemRow,
   },
 };
 </script>
